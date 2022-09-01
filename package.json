@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@shopify/app": "3.9.2",
+    "@shopify/app-bridge": "^3.2.5",
     "@shopify/cli": "3.9.2"
   },
   "author": "Kyle"
