@@ -11,6 +11,7 @@ import { setupGDPRWebHooks } from "./gdpr.js";
 import { BillingInterval } from "./helpers/ensure-billing.js";
 import { QRCodesDB } from "./qr-codes-db.js";
 import applyQrCodeApiEndpoints from "./middleware/qr-code-api.js";
+import applyQrCodePublicEndpoints from "./middleware/qr-code-public.js";
 
 const USE_ONLINE_TOKENS = false;
 const TOP_LEVEL_OAUTH_COOKIE = "shopify_top_level_oauth";
@@ -103,6 +104,9 @@ export async function createServer(
   applyAuthMiddleware(app, {
     billing: billingSettings,
   });
+
+  applyQrCodePublicEndpoints(app);
+
 
   app.post("/api/webhooks", async (req, res) => {
     try {
