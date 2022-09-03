@@ -82,6 +82,7 @@ export async function createServer(
   applyAuthMiddleware(app, {
     billing: billingSettings,
   });
+
   applyQrCodePublicEndpoints(app);
 
 
