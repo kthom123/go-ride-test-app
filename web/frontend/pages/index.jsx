@@ -56,7 +56,7 @@ export default function HomePage() {
   return (
     <Page>
       <TitleBar
-        title="Update Product Names"
+        title="Update Product Name"
         primaryAction={{
           content: "Update Name",
           onAction: () => navigate("/updateproduct/new"),
